@@ -1,6 +1,6 @@
 const days = document.getElementById('days');
 const hours = document.getElementById('hours');
-const minutes = document.getElementByIdl('minutes');
+const minutes = document.getElementById('minutes');
 const seconds = document.getElementById('seconds');
 
 const currentYear = new Date().getFullYear();
@@ -18,5 +18,8 @@ function updateCountDown() {
     const s = Math.floor(diff / 1000) % 60;
 
     days.innerHTML = d
+    hours.innerHTML = h < 10 ? '0' + h : h;
+    minutes.innerHTML = h < 10 ? '0' + m : m;
+    seconds.innerHTML = h < 10 ? '0' + s : s;
 }
 setInterval(updateCountDown, 1000);
